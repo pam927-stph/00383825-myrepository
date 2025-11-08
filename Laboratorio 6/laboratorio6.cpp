@@ -20,20 +20,20 @@ void ingresarEstudiantes(Estudiante* estudiantes, int cantidad)
 {
     for (int i = 0; i < cantidad; i++) {
         cout << endl << "Ingrese los datos del estudiante " << i + 1 << "." << endl;
-        cout << "Nombre Completo: ";
+        cout << "Nombre Completo del estudiante: ";
         cin.ignore(); 
         getline(cin, estudiantes[i].nombre);
 
-        cout << "Edad: ";
+        cout << "Edad del estudiante: ";
         cin >> estudiantes[i].edad;
 
-        cout << endl << "Ingrese las 5 calificaciones." << endl;
+        cout << endl << "Ingrese las 5 calificaciones del estudiante." << endl;
         for (int j = 0; j < 5; j++) {
             cout << "Calificacion " << j + 1 << ": ";
             cin >> estudiantes[i].calificaciones[j];
         }
 
-        cout << endl << "Direccion." <<  endl;
+        cout << endl << "Direccion del estudiante." <<  endl;
         cout << "Calle: ";
         cin.ignore();
         getline(cin, estudiantes[i].direccion.calle);
@@ -68,7 +68,7 @@ void buscarEstudiante(Estudiante* estudiantes, int cantidad)
 {
     string nombreBuscado;
     bool encontrado = false;
-    cout << endl << "Ingrese el nombre del estudiante a buscar: ";
+    cout << endl << "Ingrese el nombre del estudiante que desea buscar: ";
     cin.ignore();
     getline(cin, nombreBuscado);
 
@@ -99,7 +99,7 @@ void modificarEstudiante(Estudiante* estudiantes, int cantidad)
 {
     string nombreBuscado;
     bool encontrado = false;
-    cout << endl << "Ingrese el nombre del estudiante a modificar: ";
+    cout << endl << "Ingrese el nombre del estudiante que desee modificar: ";
     cin.ignore();
     getline(cin, nombreBuscado);
 
@@ -143,17 +143,17 @@ int main() {
 
     do {
         cout << endl << "MENU" << endl;
-        cout << "1. Ingresar estudiantes" << endl;
-        cout << "2. Mostrar estudiantes" << endl;
-        cout << "3. Buscar estudiante" << endl;
-        cout << "4. Modificar estudiante" << endl;
+        cout << "1. Ingresar los estudiantes" << endl;
+        cout << "2. Mostrar los estudiantes" << endl;
+        cout << "3. Buscar los estudiante" << endl;
+        cout << "4. Modificar los estudiante" << endl;
         cout << "5. Salir" << endl;
         cout << endl << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
         case 1:
-            cout << endl << "Ingrese la cantidad de estudiantes: ";
+            cout << endl << "Ingrese la cantidad de estudiantes que desee: ";
             cin >> cantidad;
             estudiantes = new Estudiante[cantidad];
             ingresarEstudiantes(estudiantes, cantidad);
